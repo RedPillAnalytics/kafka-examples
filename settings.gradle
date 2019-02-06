@@ -1,0 +1,9 @@
+// this section helps to test the custom confluent plugin
+// if the gradle-confluent repo is also checked out on my machine, it uses that code instead of the JAR from the portal
+// if (file('../gradle-confluent').exists()) {
+//   includeBuild('../gradle-confluent') {
+//     dependencySubstitution {
+//       substitute module('gradle.plugin.com.redpillanalytics:gradle-confluent') with project(':')
+//     }
+//   }
+// }

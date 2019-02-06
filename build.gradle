@@ -1,0 +1,33 @@
+plugins {
+   id 'groovy'
+   id 'maven-publish'
+   id "com.github.johnrengelman.shadow" version "4.0.1"
+   id "com.github.ben-manes.versions" version "0.20.0"
+   id "com.redpillanalytics.gradle-confluent" version "1.0.9"
+}
+publishing {
+   repositories {
+      mavenLocal()
+   }
+}
+group = 'com.redpillanalytics'
+version = '1.0.0'
+
+repositories {
+   mavenLocal()
+   jcenter()
+   maven {
+      url "http://packages.confluent.io/maven/"
+   }
+}
+
+dependencies {
+   compile 'io.confluent.ksql:ksql-udf:+'
+   compile 'com.mashape.unirest:unirest-java:1.4.9'
+
+   compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.15'
+   compile group: 'org.slf4j', name: 'slf4j-simple', version: '+'
+
+   testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+   //archives group: 'com.redpillanalytics', name: 'confluent-blog-pipeline', version: '+'
+}
