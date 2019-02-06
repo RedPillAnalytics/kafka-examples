@@ -3,7 +3,7 @@ This repository is a companion to a yet-to-be-published Confluent blog series on
 
 The plugin used by this repository is available from the [Gradle Plugin Portal](https://plugins.gradle.org/plugin/com.redpillanalytics.gradle-confluent). You can explore the [GitHub repository](https://github.com/RedPillAnalytics/gradle-confluent) that hosts the plugin and open feature requests, and maybe even contribute pull requests. Finally, the CI process for the plugin publishes the latest [API documentation](https://s3.amazonaws.com/documentation.redpillanalytics.com/gradle-confluent/latest/index.html) which might also be helpful
 
-Since most of what is contained here is Gradle-based, I also decided to use the wonderful [Gradle Docker Compose Plugin](https://github.com/avast/gradle-docker-compose-plugin) to manage the environment necessary for this quickstart. I borrowed and modified the 
+Since most of what is contained here is Gradle-based, I decided to use the wonderful [Gradle Docker Compose Plugin](https://github.com/avast/gradle-docker-compose-plugin) to manage the environment necessary for this quickstart. I borrowed and modified the 
 [docker compose file](docker-compose.yml) file from the [Confluent Clickstream Example](https://github.com/confluentinc/examples/tree/5.1.0-post/clickstream), so many thanks to [Robin Moffatt of Confluent](https://twitter.com/rmoff) for this.
 
 To get the Confluent and KSQL environment necessary for this Quickstart, just do the following:
