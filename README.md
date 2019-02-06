@@ -1,5 +1,5 @@
 # Quickstart for the gradle-confluent Plugin
-This repository is a companion to a yet-to-be-published series on using Gradle with KSQL and Kafka Streams.
+This repository is a companion to a yet-to-be-published Confluent blog series on using Gradle with KSQL and Kafka Streams.
 
 The plugin used by this repository is available from the [Gradle Plugin Portal](https://plugins.gradle.org/plugin/com.redpillanalytics.gradle-confluent). You can explore the [GitHub repository](https://github.com/RedPillAnalytics/confluent-blog) that hosts the plugin and open feature requests, and maybe even contribute pull requests. Finally, the CI process for the plugin publishes the latest [API documentation](https://s3.amazonaws.com/documentation.redpillanalytics.com/gradle-confluent/latest/index.html) which might also be helpful
 
