@@ -99,7 +99,7 @@ ksql>
 Once you are finished with the Docker environment, you can bring it down just as easy:
 
 ```Bash
-==> gradle composeDown
+==> ./gradlew composeDown
 
 > Task :composeDown
 Stopping ksql-cli        ...
