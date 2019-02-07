@@ -1,11 +1,5 @@
 
-----------------------------------------------------------------------------------------------------------------------------
--- A series of basic clickstream-analytics
---
--- Min, Max, UDFs etc
-----------------------------------------------------------------------------------------------------------------------------
-
--- number of events per minute - think about key-for-distribution-purpose - shuffling etc - shouldnt use 'userid'
+-- number of events per minute
 --@DeleteTopic
 CREATE table events_per_min AS 
 SELECT userid, count(*) AS events 
@@ -24,4 +18,3 @@ CREATE STREAM ENRICHED_ERROR_CODES AS SELECT code, definition
 FROM clickstream 
 LEFT JOIN clickstream_codes 
 ON clickstream.status = clickstream_codes.code;
-
