@@ -19,24 +19,25 @@ version = '1.0.0'
 
 // configuration for gradle-confluent plugin
 confluent {
-    enableStreams false
-    enableFunctions false
+    enablePipelines true
+    enableFunctions true
+    enableStreams true
 }
 
 // where do we want to publish our artifacts
 // currently only publish to local fileystem
-// publishing {
-//     repositories {
-//         mavenLocal()
-//     }
-// }
+publishing {
+    repositories {
+        mavenLocal()
+    }
+}
 
 // where do we want to get underlying libs
-// repositories {
-//     mavenLocal()
-// }
+repositories {
+    mavenLocal()
+}
 
 // library dependencies for any plugin features
-// dependencies {
-//     archives group: 'com.redpillanalytics', name: 'ksql-examples-pipeline', version: '+'
-// }
+dependencies {
+    archives group: 'com.redpillanalytics', name: 'confluent-blog-pipeline', version: '+'
+}
