@@ -61,7 +61,7 @@ BUILD SUCCESSFUL in 1m 5s
 You can verify that the three clickstream tables necessary for the Quickstart are there using the KSQL CLI:
 
 ```Bash
-==> ksql
+==> docker exec -ti ksql-cli ksql http://ksql-server:8088
 
                   ===========================================
                   =        _  __ _____  ____  _             =
@@ -76,7 +76,7 @@ You can verify that the three clickstream tables necessary for the Quickstart ar
 
 Copyright 2017-2018 Confluent Inc.
 
-CLI v5.0.0, Server v5.1.0 located at http://localhost:8088
+CLI v5.1.0, Server v5.1.0 located at http://ksql-server:8088
 
 Having trouble? Type 'help' (case-insensitive) for a rundown of how things work!
 
@@ -93,7 +93,8 @@ ksql> list topics;
  docker-connect-offsets | false      | 25         | 1                  | 0         | 0
  docker-connect-status  | false      | 5          | 1                  | 0         | 0
 ----------------------------------------------------------------------------------------------------
-ksql>
+ksql> exit
+Exiting KSQL.
 ```
 
 Once you are finished with the Docker environment, you can bring it down just as easy:
