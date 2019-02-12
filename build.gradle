@@ -38,6 +38,6 @@ repositories {
 }
 
 // library dependencies for any plugin features
-dependencies {
-    archives group: 'com.redpillanalytics', name: 'confluent-blog-pipeline', version: '+'
-}
+// dependencies {
+//     archives group: 'com.redpillanalytics', name: 'confluent-blog-pipeline', version: '+'
+// }
