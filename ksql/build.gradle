@@ -1,0 +1,16 @@
+plugins {
+    // this plugin is the basis for the blog
+    id "com.redpillanalytics.gradle-confluent" version "1.1.0"
+}
+
+// configuration for gradle-confluent plugin
+confluent {
+    enablePipelines true
+    enableFunctions false
+    enableStreams false
+}
+
+// library dependencies for any plugin features
+// dependencies {
+//     archives group: 'com.redpillanalytics', name: 'confluent-blog-pipeline', version: '+'
+// }

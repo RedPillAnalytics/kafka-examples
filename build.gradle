@@ -1,43 +1,36 @@
 plugins {
-    // this plugin is the basis for the blog
-    id "com.redpillanalytics.gradle-confluent" version "1.1.0"
     // standard Maven functionality in Gradle
     id 'maven-publish'
     // plugin detects changing in underlying libs
-    id "com.github.ben-manes.versions" version "0.20.0"
+    id 'com.github.ben-manes.versions' version "0.20.0"
     // docker compose functionality
-    id "com.avast.gradle.docker-compose" version "0.8.14"
+    id 'com.avast.gradle.docker-compose' version "0.8.14"
     // facilitates publishing build activity to streaming and analytics platforms
     // including Kafka
-    id "com.redpillanalytics.gradle-analytics" version "1.1.21"
+    id 'com.redpillanalytics.gradle-analytics' version "1.1.21"
 }
 
-// group and version of our artifacts
-// normally automated with Gradle plugin... here for simplicaity
-group = 'com.redpillanalytics'
-version = '1.0.0'
+allprojects {
 
-// configuration for gradle-confluent plugin
-confluent {
-    enablePipelines true
-    enableFunctions true
-    enableStreams true
-}
+    apply plugin: 'maven-publish'
+    // apply plugin: 'com.github.ben-manes.versions'
+    // apply plugin: 'com.avast.gradle.docker-compose'
 
-// where do we want to publish our artifacts
-// currently only publish to local fileystem
-publishing {
+    // group and version of our artifacts
+    // normally automated with Gradle plugin... here for simplicaity
+    group = 'com.redpillanalytics'
+    version = '1.0.0'
+
+    // where do we want to publish our artifacts
+    // currently only publish to local fileystem
+    publishing {
+        repositories {
+            mavenLocal()
+        }
+    }
+
+    // where do we want to get underlying libs
     repositories {
         mavenLocal()
     }
 }
-
-// where do we want to get underlying libs
-repositories {
-    mavenLocal()
-}
-
-// library dependencies for any plugin features
-// dependencies {
-//     archives group: 'com.redpillanalytics', name: 'confluent-blog-pipeline', version: '+'
-// }
