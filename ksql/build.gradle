@@ -1,16 +1,27 @@
 plugins {
-    // this plugin is the basis for the blog
-    id "com.redpillanalytics.gradle-confluent" version "1.1.0"
+   id "com.redpillanalytics.gradle-confluent" version "1.1.0"
+//   id 'maven-publish'
 }
 
-// configuration for gradle-confluent plugin
 confluent {
     enablePipelines true
     enableFunctions false
     enableStreams false
 }
 
-// library dependencies for any plugin features
-// dependencies {
-//     archives group: 'com.redpillanalytics', name: 'confluent-blog-pipeline', version: '+'
+// publishing {
+//     repositories {
+//         mavenLocal()
+//     }
 // }
+// group = 'com.redpillanalytics'
+// version = '1.0.0'
+
+// repositories {
+//     mavenLocal()
+// }
+
+// dependencies {
+//     archives group: 'com.redpillanalytics', name: 'ksql-pipeline', version: '+'
+// }
+

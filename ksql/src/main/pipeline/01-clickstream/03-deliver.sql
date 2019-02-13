@@ -6,6 +6,7 @@
 ----------------------------------------------------------------------------------------------------------------------------
 
 -- Aggregate (count&groupBy) using a TABLE-Window
+--@DeleteTopic
 CREATE TABLE ENRICHED_ERROR_CODES_COUNT AS
 SELECT code, definition, COUNT(*) AS count
 FROM ENRICHED_ERROR_CODES WINDOW TUMBLING (size 30 second)
