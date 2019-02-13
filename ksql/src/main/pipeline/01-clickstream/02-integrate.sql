@@ -1,6 +1,5 @@
 
 -- number of events per minute
---@DeleteTopic
 CREATE table events_per_min AS 
 SELECT userid, count(*) AS events 
 FROM clickstream window TUMBLING (size 60 second) 
