@@ -1,0 +1,48 @@
+plugins {
+   id 'groovy'
+   id 'maven-publish'
+   id "com.github.johnrengelman.shadow" version "5.0.0"
+   id "com.redpillanalytics.gradle-confluent" version "1.1.2"
+   // logging results
+   id 'com.adarshr.test-logger' version '1.6.0'
+}
+
+// Default artifact naming.
+group = 'com.redpillanalytics'
+version = '1.0.0'
+
+dependencies {
+   compile localGroovy()
+   compile group: 'org.slf4j', name: 'slf4j-simple', version: '+'
+   compile 'io.confluent.ksql:ksql-udf:+'
+   testCompile 'org.spockframework:spock-core:1.2-groovy-2.5'
+}
+
+repositories {
+   jcenter()
+   maven {
+      url "http://packages.confluent.io/maven/"
+   }
+}
+
+// Options for all tests
+tasks.withType(Test) {
+   ignoreFailures true
+   testLogging.showStandardStreams true
+}
+
+// configure the Confluent plugin
+confluent {
+   enablePipelines false
+   enableFunctions true
+   enableStreams false
+}
+
+//customize ShadowJar
+jar.enabled = false
+
+shadowJar {
+   classifier = ''
+}
+
+tasks.build.dependsOn tasks.shadowJar

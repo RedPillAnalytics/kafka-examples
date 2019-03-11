@@ -10,7 +10,7 @@ class ContainsTest extends Specification {
            contains = new Contains()
 
    @Unroll
-   def "Passed: #input, #pattern, #ignorecase; Returns: #result"() {
+   def "Passed: #expression, #search, #ignorecase; Returns: #result"() {
 
       expect: "ignorecase parameter to return the proper result string"
       contains.contains(expression, search, 'yes', 'no', ignorecase) == result
