@@ -36,7 +36,7 @@ Creating ksql-server     ... done
 Creating ksql-cli        ...
 Creating ksql-cli        ... done
 ```
-You can verify that the three clickstream tables necessary for the Quickstart are there using the KSQL CLI:
+You can verify that the three clickstream tables necessary for the Quickstart are there using the KSQL CLI. The tables we are interested are `clickstream`, `clickstream_codes` and `clickstream_users`:
 
 ```Bash
 ./gradlew listTopics
