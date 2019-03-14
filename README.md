@@ -4,6 +4,8 @@ This repository provides examples for working with Kafka, most notably, examples
 I use the [Gradle Docker Compose Plugin](https://github.com/avast/gradle-docker-compose-plugin) to manage the environment necessary for this quickstart. I borrowed and modified the 
 [docker compose file](docker-compose.yml) file from the [Confluent Clickstream Example](https://github.com/confluentinc/examples/tree/5.1.0-post/clickstream), so thanks to [Robin Moffatt of Confluent](https://twitter.com/rmoff) for this.
 
+Below is a series of commands that can be executed to provision a Confluent environment using docker-compose. You can walk through the commands by copying and pasting to a terminal, or for an easy way to execute the commands one after another, just use the [Jupyter notebook](https://github.com/RedPillAnalytics/kafka-examples/blob/master/docker-compose.ipynb).
+
 To get the Confluent and KSQL environment necessary for this Quickstart, just do the following:
 
 ```Bash
