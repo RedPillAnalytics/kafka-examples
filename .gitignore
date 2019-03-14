@@ -28,3 +28,5 @@ gradle-app.setting
 # Cache of project
 .gradletasknamecache
 
+# Notebooks
+.ipynb_checkpoints
