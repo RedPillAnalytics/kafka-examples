@@ -1,5 +1,5 @@
 plugins {
-   id "com.redpillanalytics.gradle-confluent" version "1.1.3"
+   id "com.redpillanalytics.gradle-confluent" version "1.1.5"
    id 'maven-publish'
 }
 
@@ -22,6 +22,10 @@ repositories {
 }
 
 dependencies {
-   // archives group: 'com.redpillanalytics', name: 'ksql-pipeline', version: '+'
+   //archives group: 'com.redpillanalytics', name: 'ksql-pipeline', version: '+'
+}
+
+analytics.sinks {
+   kafka
 }
 
