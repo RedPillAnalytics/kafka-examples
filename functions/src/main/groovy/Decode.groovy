@@ -19,13 +19,9 @@ class Decode {
 
       // If any of the expected values are null, then just return null
       // This simplifies functional wrapping around the function call
-      if (expression == null || search1 == null || text1 == null) {
-
-         return null
-      }
+      if (expression == null || search1 == null || text1 == null) return null
 
       return Utils.textMatch(expression, search1, ignorecase) ? text1 : defaultvalue
-
    }
 
    @Udf(description = """Accepts: expression, search1, text1, search2, text2, defaultvalue, ignorecase.
@@ -37,19 +33,13 @@ class Decode {
 
       // If any of the expected values are null, then just return null
       // This simplifies functional wrapping around the function call
-      if (expression == null || search1 == null || text1 == null || search2 == null || text2 == null) {
+      if (expression == null || search1 == null || text1 == null || search2 == null || text2 == null) return null
 
-         return null
-      }
+      if (Utils.textMatch(expression, search1, ignorecase)) return text1
 
-      if (Utils.textMatch(expression, search1, ignorecase)) {
+      else if (Utils.textMatch(expression, search2, ignorecase)) return text2
 
-         return text1
-      } else if (Utils.textMatch(expression, search2, ignorecase)) {
-
-         return text2
-      } else return defaultvalue
-
+      else return defaultvalue
    }
 
    @Udf(description = """Accepts: expression, search1, text1, search2, text2, search3, text3 defaultvalue, ignorecase.
@@ -62,10 +52,7 @@ class Decode {
 
       // If any of the expected values are null, then just return null
       // This simplifies functional wrapping around the function call
-      if (expression == null || search1 == null || text1 == null || search2 == null || text2 == null || search3 == null || text3 == null) {
-
-         return null
-      }
+      if (expression == null || search1 == null || text1 == null || search2 == null || text2 == null || search3 == null || text3 == null) return null
 
       if (Utils.textMatch(expression, search1, ignorecase)) return text1
 
@@ -74,6 +61,5 @@ class Decode {
       else if (Utils.textMatch(expression, search3, ignorecase)) return text3
 
       else return defaultvalue
-
    }
 }

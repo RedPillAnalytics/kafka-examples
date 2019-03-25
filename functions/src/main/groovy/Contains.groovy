@@ -15,11 +15,8 @@ class Contains {
    String contains(String expression, String search, String iftrue, String iffalse, Boolean ignorecase = false) {
 
       if (expression == null || search == null || iftrue == null || iffalse == null) {
-
          return iffalse
       }
-
       return Utils.textContains(expression, search, ignorecase) ? iftrue : iffalse
-
    }
 }
