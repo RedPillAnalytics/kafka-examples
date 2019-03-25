@@ -7,5 +7,5 @@ plugins {
     id 'com.avast.gradle.docker-compose' version "0.9.1"
     // facilitates publishing build activity to streaming and analytics platforms
     // including Kafka
-    id 'com.redpillanalytics.gradle-analytics' version "1.2.2"
+    id 'com.redpillanalytics.gradle-analytics' version "1.2.3"
 }

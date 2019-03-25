@@ -7,10 +7,10 @@ import spock.lang.Unroll
 class DecodeTest extends Specification {
 
    @Shared
-           decode = new Decode()
+   Decode decode = new Decode()
 
    @Unroll
-   def "'#result' is returned when '#expression', '#search', '#text' and '#defaultValue' are passed."() {
+   def "When: #expression, #search, #text, #defaultValue; Expect: #result"() {
 
       expect: "#result is returned with a successful match"
       decode.decode(expression, search, text, defaultValue) == result
@@ -24,7 +24,7 @@ class DecodeTest extends Specification {
    }
 
    @Unroll
-   def "'#result' is returned when '#expression', '#search', '#text', '#defaultValue' and '#ignorecase' are passed."() {
+   def "When: #expression, #search, #text, #defaultValue, #ignorecase; Expect: #result"() {
 
       expect: "#result is returned with a successful match"
       decode.decode(expression, search, text, defaultValue, ignorecase) == result
@@ -39,7 +39,7 @@ class DecodeTest extends Specification {
    }
 
    @Unroll
-   def "Passed: #expression, #search1, #text1, #search2, #text2, #defaultValue and #ignorecase; Expect: #result"() {
+   def "When: #expression, #search1, #text1, #search2, #text2, #defaultValue, #ignorecase; Expect: #result"() {
 
       expect: "#result is returned with a successful match"
       decode.decode(expression, search1, text1, search2, text2, defaultValue, ignorecase) == result
@@ -54,7 +54,7 @@ class DecodeTest extends Specification {
    }
 
    @Unroll
-   def "Passed: #expression, #search1, #text1, #search2, #text2, #search3, #text3, #defaultValue and #ignorecase; Expect: #result"() {
+   def "When: #expression, #search1, #text1, #search2, #text2, #search3, #text3, #defaultValue, #ignorecase; Expect: #result"() {
 
       expect: "#result is returned with a successful match"
       decode.decode(expression, search1, text1, search2, text2, search3, text3, defaultValue, ignorecase) == result

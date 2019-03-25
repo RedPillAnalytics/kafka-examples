@@ -7,10 +7,10 @@ import spock.lang.Unroll
 class ContainsTest extends Specification {
 
    @Shared
-           contains = new Contains()
+   Contains contains = new Contains()
 
    @Unroll
-   def "Passed: #expression, #search, #ignorecase; Returns: #result"() {
+   def "When: #expression, #search, #ignorecase; Expect: #result"() {
 
       expect: "ignorecase parameter to return the proper result string"
       contains.contains(expression, search, 'yes', 'no', ignorecase) == result

@@ -2,7 +2,7 @@ plugins {
    id 'groovy'
    id 'maven-publish'
    id "com.github.johnrengelman.shadow" version "5.0.0"
-   id "com.redpillanalytics.gradle-confluent" version "1.1.2"
+   id "com.redpillanalytics.gradle-confluent" version "1.1.5"
    // logging results
    id 'com.adarshr.test-logger' version '1.6.0'
 }
