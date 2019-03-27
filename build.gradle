@@ -9,3 +9,7 @@ plugins {
     // including Kafka
     id 'com.redpillanalytics.gradle-analytics' version "1.2.3"
 }
+
+analytics.sinks {
+    kafka
+}
