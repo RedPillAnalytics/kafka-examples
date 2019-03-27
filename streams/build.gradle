@@ -1,27 +1,32 @@
 plugins {
-   id 'java'
-   id "com.redpillanalytics.gradle-confluent" version "1.1.7"
-   id 'com.adarshr.test-logger' version '1.6.0'
    id 'application'
+   id 'maven-publish'
 }
 
 // application entry point
 mainClassName = 'WordCountLambdaExample'
+applicationName = 'word-count-lambda'
 
+// mavenLocal publish
+publishing {
+   publications {
+      streams(MavenPublication) {
+         artifact distZip
+      }
+   }
+   repositories {
+      mavenLocal()
+   }
+}
 // Default artifact naming.
 group = 'com.redpillanalytics'
 version = '1.0.0'
 
 dependencies {
-   compile localGroovy()
    compile 'org.slf4j:slf4j-simple:+'
-   compile 'org.apache.kafka:kafka-streams:2.2.0'
-   testCompile 'org.spockframework:spock-core:1.2-groovy-2.5'
+   compile 'org.apache.kafka:kafka-streams:+'
 }
 
 repositories {
    jcenter()
-   maven {
-      url "http://packages.confluent.io/maven/"
-   }
 }

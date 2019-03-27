@@ -1,6 +1,4 @@
 plugins {
-    // standard Maven functionality in Gradle
-    id 'maven-publish'
     // plugin detects changing in underlying libs
     id 'com.github.ben-manes.versions' version "0.21.0"
     // docker compose functionality

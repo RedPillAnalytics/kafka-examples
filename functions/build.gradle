@@ -1,25 +1,28 @@
 plugins {
    id 'groovy'
    id 'maven-publish'
-   id "com.redpillanalytics.gradle-confluent" version "1.1.7"
    id 'com.adarshr.test-logger' version '1.6.0'
    id "com.github.johnrengelman.shadow" version "5.0.0"
 }
 
 //customize ShadowJar
-//jar.enabled = false
-//shadowJar {
-//   classifier = ''
-//}
-//tasks.build.dependsOn tasks.shadowJar
+jar.enabled = false
+shadowJar {
+   classifier = ''
+}
+tasks.build.dependsOn tasks.shadowJar
 
 // mavenLocal publish
 publishing {
+   publications {
+      function(MavenPublication) { publication ->
+         project.shadow.component(publication)
+      }
+   }
    repositories {
       mavenLocal()
    }
 }
-// Default artifact naming.
 group = 'com.redpillanalytics'
 version = '1.0.0'
 
