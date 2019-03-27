@@ -6,29 +6,34 @@ plugins {
    id "com.github.johnrengelman.shadow" version "5.0.0"
 }
 
+//customize ShadowJar
+//jar.enabled = false
+//shadowJar {
+//   classifier = ''
+//}
+//tasks.build.dependsOn tasks.shadowJar
+
+// mavenLocal publish
+publishing {
+   repositories {
+      mavenLocal()
+   }
+}
 // Default artifact naming.
 group = 'com.redpillanalytics'
 version = '1.0.0'
 
 dependencies {
    compile localGroovy()
-   compile group: 'org.slf4j', name: 'slf4j-simple', version: '+'
+   compile 'org.slf4j:slf4j-simple:+'
    compile 'io.confluent.ksql:ksql-udf:+'
    testCompile 'org.spockframework:spock-core:1.2-groovy-2.5'
 }
 
+// confluent dependencies
 repositories {
    jcenter()
    maven {
       url "http://packages.confluent.io/maven/"
    }
 }
-
-//customize ShadowJar
-jar.enabled = false
-
-shadowJar {
-   classifier = ''
-}
-
-tasks.build.dependsOn tasks.shadowJar

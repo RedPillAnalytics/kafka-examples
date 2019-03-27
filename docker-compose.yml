@@ -75,8 +75,7 @@ services:
       CONNECT_PLUGIN_PATH: '/usr/share/java'
       CONNECT_HOST: kafka-connect
     volumes:
-     - $PWD/ksql/ksql-clickstream-demo/demo/:/scripts
-     - $PWD/ksql/ksql-clickstream-demo/demo/connect-config:/usr/share/java/null-smt
+     - $PWD:/workspace
 
   ksql-server:
     container_name: ksql-server
@@ -92,6 +91,9 @@ services:
       KSQL_LISTENERS: http://0.0.0.0:8088
       KSQL_KSQL_SCHEMA_REGISTRY_URL: http://schema-registry:8081
       KSQL_KSQL_SERVICE_ID: kafka-examples
+      KSQL_KSQL_EXTENSION_DIR: /etc/ksql-server/ext
+    volumes:
+      - $PWD/ext:/etc/ksql-server/ext
 
   ksql-cli:
     container_name: ksql-cli

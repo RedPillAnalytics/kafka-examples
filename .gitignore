@@ -16,6 +16,9 @@
 build/
 bin
 
+# docker volumes
+ext
+
 # Plugin builds
 out
 
