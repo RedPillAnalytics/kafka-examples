@@ -9,5 +9,8 @@ plugins {
 }
 
 analytics.sinks {
-    kafka
+    kafka {
+        servers = 'localhost:9092'
+        acks = 'all'
+    }
 }

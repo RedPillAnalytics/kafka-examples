@@ -8,7 +8,7 @@ import io.confluent.ksql.function.udf.UdfDescription
         description = """Given up to 3 pairs of 'search' and 'text', return the first 'text' value where 'search' matches 'expression'. If no match, return 'defaultvalue'. 'ignorecase' defaults to 'false'.""")
 class Decode {
 
-   @Udf(description = """Given 1 pair 'search' and 'text', return the first 'text' value where 'search' matches 'expression'. If no match, return 'defaultvalue'. 'ignorecase' defaults to 'false'.""")
+   @Udf(description = """Given 1 pair of 'search' and 'text', return the first 'text' value where 'search' matches 'expression'. If no match, return 'defaultvalue'. 'ignorecase' defaults to 'false'.""")
    String decode(String expression, String search1, String text1, String defaultvalue, Boolean ignorecase = false) {
 
       // If any of the expected values are null, then just return null
@@ -28,7 +28,7 @@ class Decode {
 
       else return defaultvalue
    }
-   @Udf(description = """Given 3 paris of 'search' and 'text', return the first 'text' value where 'search' matches 'expression'. If no match, return 'defaultvalue'. 'ignorecase' defaults to 'false'.""")
+   @Udf(description = """Given 3 pairs of 'search' and 'text', return the first 'text' value where 'search' matches 'expression'. If no match, return 'defaultvalue'. 'ignorecase' defaults to 'false'.""")
    String decode(String expression, String search1, String text1, String search2, String text2, String search3, String text3, String defaultvalue, Boolean ignorecase = false) {
 
       // If any of the expected values are null, then just return null

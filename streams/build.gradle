@@ -5,7 +5,7 @@ plugins {
 
 // application entry point
 mainClassName = 'WordCountLambdaExample'
-applicationName = 'word-count-lambda'
+applicationName = 'wordcount-lambda-example'
 
 // mavenLocal publish
 publishing {
