@@ -6,9 +6,9 @@ plugins {
 }
 
 //customize ShadowJar
-//jar.enabled = false
-//shadowJar { classifier = '' }
-//tasks.build.dependsOn tasks.shadowJar
+jar.enabled = false
+shadowJar { classifier = '' }
+tasks.build.dependsOn tasks.shadowJar
 
 // mavenLocal publish
 publishing {
