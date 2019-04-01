@@ -33,3 +33,4 @@ gradle-app.setting
 
 # Notebooks
 .ipynb_checkpoints
+*/.ipynb_checkpoints/*
