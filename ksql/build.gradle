@@ -16,6 +16,5 @@ repositories {
 }
 
 dependencies {
-   archives 'com.redpillanalytics:ksql-pipeline:+'
+   //archives 'com.redpillanalytics:ksql-pipeline:+'
 }
-
