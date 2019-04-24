@@ -6,9 +6,9 @@ plugins {
 }
 
 //customize ShadowJar
-// jar.enabled = false
-// shadowJar { classifier = '' }
-// tasks.build.dependsOn tasks.shadowJar
+jar.enabled = false
+shadowJar { classifier = '' }
+tasks.build.dependsOn tasks.shadowJar
 
 // mavenLocal publish
 publishing {
@@ -27,7 +27,7 @@ version = '1.0.0'
 dependencies {
    compile localGroovy()
    compile 'org.slf4j:slf4j-simple:+'
-   compile 'io.confluent.ksql:ksql-udf:+'
+   compile 'io.confluent.ksql:ksql-udf:5.2.1'
    testCompile 'org.spockframework:spock-core:1.2-groovy-2.5'
 }
 
