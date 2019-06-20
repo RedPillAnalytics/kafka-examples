@@ -1,33 +1,33 @@
 plugins {
    id 'groovy'
-   id 'maven-publish'
-   id 'com.adarshr.test-logger' version '1.6.0'
-   id "com.github.johnrengelman.shadow" version "5.0.0"
+   id 'com.adarshr.test-logger' version '1.7.0'
+   //id 'maven-publish'
+   //id "com.github.johnrengelman.shadow" version "5.0.0"
 }
 
 //customize ShadowJar
-jar.enabled = false
-shadowJar { classifier = '' }
-tasks.build.dependsOn tasks.shadowJar
+// jar.enabled = false
+// shadowJar { classifier = '' }
+// tasks.build.dependsOn tasks.shadowJar
 
 // mavenLocal publish
-publishing {
-   publications {
-      function(MavenPublication) { publication ->
-         project.shadow.component(publication)
-      }
-   }
-   repositories {
-      mavenLocal()
-   }
-}
+// publishing {
+//    publications {
+//       function(MavenPublication) { publication ->
+//          project.shadow.component(publication)
+//       }
+//    }
+//    repositories {
+//       mavenLocal()
+//    }
+// }
 group = 'com.redpillanalytics'
 version = '1.0.0'
 
 dependencies {
    compile localGroovy()
    compile 'org.slf4j:slf4j-simple:+'
-   compile 'io.confluent.ksql:ksql-udf:5.2.1'
+   compile 'io.confluent.ksql:ksql-udf:5.2.2'
    testCompile 'org.spockframework:spock-core:1.2-groovy-2.5'
 }
 
