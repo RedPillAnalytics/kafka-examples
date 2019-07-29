@@ -2,7 +2,7 @@ plugins {
     // plugin detects changing in underlying libs
     id 'com.github.ben-manes.versions' version "0.21.0"
     // docker compose functionality
-    id 'com.avast.gradle.docker-compose' version "0.9.1"
+    id 'com.avast.gradle.docker-compose' version "0.9.4"
     // facilitates publishing build activity to streaming and analytics platforms
     // including Kafka
     id 'com.redpillanalytics.gradle-analytics' version "1.2.3"
