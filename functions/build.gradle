@@ -1,8 +1,8 @@
 plugins {
    id 'groovy'
-   id 'com.adarshr.test-logger' version '1.7.0'
+   id 'com.adarshr.test-logger' version '2.0.0'
    //id 'maven-publish'
-   //id "com.github.johnrengelman.shadow" version "5.0.0"
+   //id "com.github.johnrengelman.shadow" version "5.2.0"
 }
 
 //customize ShadowJar
@@ -27,7 +27,7 @@ version = '1.0.0'
 dependencies {
    compile localGroovy()
    compile 'org.slf4j:slf4j-simple:+'
-   compile 'io.confluent.ksql:ksql-udf:5.2.2'
+   compile 'io.confluent.ksql:ksql-udf:5.4.1'
    testCompile 'org.spockframework:spock-core:1.2-groovy-2.5'
 }
 

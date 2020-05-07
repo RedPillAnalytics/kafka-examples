@@ -1,16 +1,18 @@
 plugins {
     // plugin detects changing in underlying libs
-    id 'com.github.ben-manes.versions' version "0.21.0"
+    id 'com.github.ben-manes.versions' version "0.28.0"
     // docker compose functionality
-    id 'com.avast.gradle.docker-compose' version "0.9.4"
+    id 'com.avast.gradle.docker-compose' version "0.10.10"
     // facilitates publishing build activity to streaming and analytics platforms
     // including Kafka
-    id 'com.redpillanalytics.gradle-analytics' version "1.2.3"
+    id 'com.redpillanalytics.gradle-analytics' version "1.3.0"
 }
 
-analytics.sinks {
-    kafka {
-        servers = 'localhost:9092'
+analytics {
+   kafka {
+     test {
+        bootstrapServers = 'localhost:9092'
         acks = 'all'
-    }
+     }
+  }
 }
